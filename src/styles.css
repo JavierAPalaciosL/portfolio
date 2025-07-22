@@ -1,1 +1,296 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+:root,
+:root[data-theme="light"] {
+  --bgcolor: oklch(1 0 89.876);
+  --font-myfont: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --color-button: #91eeb1;
+  --color-font: #2f2e2e;
+  --color-header: rgba(189, 255, 225, 0.42);
+  --border-radius-boton: 4px;
+  --border-button:  #0af0f8 solid 2px;
+  --h1-size: 3.0em;
+  --h2-size: 2.0em;
+  --text-body: #000
+}
+
+:root[data-theme="dark"] {
+  --bgcolor: oklch(0.325 0 89.876);
+  --font-myfont: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-button: #29312f;
+  --color-font: #ffffff;
+  --color-header: rgba(41, 47, 45, 0.42);
+  --border-radius-boton: 4px;
+  --border-button:  #00ff02 solid 2px;
+  --h1-size: 3.0em;
+  --h2-size: 2.0em;
+  --text-body: #ffffff
+}
+
+body{
+  background-color: var(--bgcolor);
+}
+
+h1 {
+  background-color: var(--font-myfont);
+  font-size: var(--h1-size);
+  color: var(--color-font);
+}
+
+h2 {
+  background-color: var(--font-myfont);
+  font-size: var(--h2-size);
+  color: var(--color-font);
+}
+
+h3, h4, h5, h6{
+
+}
+
+p {
+  background-color: var(--font-myfont);
+  font-family: var(--font-myfont);
+  font-size: 1.2rem;
+  color: var(--color-font);
+  text-align: justify;
+
+}
+
+label{
+  color: var(--color-font);
+}
+
+ul, li{
+  margin-left: 2%;
+  font-family: var(--font-myfont);
+  font-size: 1.20rem;
+  color: var(--color-font);
+}
+
+ol, dl, dt, dd{
+
+}
+
+header{
+  background-color: var(--color-header);
+  border-radius: 3px;
+  position: sticky;
+  height: 4.5rem;
+  width: 100%;
+  backdrop-filter: blur(0.5rem);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px   -2px rgba(0, 0, 0, 0.05), 0 0 10px rgba(0, 0, 0, 0.03);
+  top: 2rem;
+  margin-top: 1%;
+  font-family: 'Typography', sans-serif;
+}
+
+button{
+  border-radius: var(--border-radius-boton);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: var(--color-button);
+  color: var(--color-font);
+  border: var(--border-button);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 1%;
+  margin-top: 0.6%;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.start-container{
+  display: flex;
+  margin-top: 5%;
+  height: 75vh;
+  padding: 10px;
+}
+
+.start-container-photocontainer{
+  margin-left: 50px;
+  margin-right: 10%;
+}
+
+.start-container-infocontainer {
+  height: 0;
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.me{
+  width: 40vw;
+  height: 75vh;
+  border-radius: 5%;
+  object-fit: cover;
+
+}
+
+.contact-me{
+  display: flex;
+  margin-top: 5%;
+  padding: 1%;
+}
+
+.contact-me button{
+  margin-left: 4%;
+  padding: 2%;
+  width: 100%;
+
+}
+
+.icons{
+  display: flex;
+}
+
+.icons img{
+  width: 5vw;
+  height: 5vh;
+  margin-left: 40%;
+}
+
+.about-me{
+  margin-top: 5%;
+  padding: 5%;
+}
+
+.projects{
+  padding: 5%;
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 1rem 2rem;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-padding: 0 2rem;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--bgcolor);
+  scrollbar-width: none;
+
+
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 100%;
+  height: 60vh;
+  border-radius: 0.5rem;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 0.5rem;
+}
+.carousel-button.next {
+  right: 0.5rem;
+}
+
+
+.spawn {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: spawn-in 1.0s ease-out forwards;
+}
+
+@keyframes spawn-in {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+@media (max-width: 1150px) {
+  .start-container {
+    flex-direction: column;
+  }
+
+  .start-container-infocontainer {
+    height: 0;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 5%;
+  }
+
+  .start-container > div:first-child {
+    width: 100%;
+  }
+
+  button{
+    padding: 0;
+  }
+
+  .icons{
+    display: flex;
+
+  }
+
+  .icons img {
+    margin-left: 0;
+    width: 10vw;
+    height: 10vh;
+    object-fit: contain;
+    margin-right: 5%;
+  }
+
+  .start-container-photocontainer{
+    margin-left: 1%;
+    margin-top: 5%;
+  }
+
+  .me{
+    width: 90%;
+    height: 80vh;
+    border-radius: 0%;
+    object-fit: cover;
+  }
+
+
+  .contact-me{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    padding: 1%;
+    margin-bottom: 5vh;
+  }
+
+  .about-me{
+    margin-top: 100%;
+    padding: 5%;
+  }
+
+  .contact-me button {
+
+    width: 90%;
+
+  }
+
+  .projects-list{
+    display: flex;
+    flex-direction: column;
+  }
+
+  }

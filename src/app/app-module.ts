@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { ToogleButton } from './shared/toogle/toogle-button';
+import { CardProject } from './shared/card/card-project';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    ToogleButton,
+    CardProject
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div class="image">
+  <img [src]=project.image alt="foto">
+</div>
+
+<div class="content">
+  <a href="#">
+    <span class="title">
+      {{project.title}}
+    </span>
+  </a>
+
+  <p class="desc">
+    {{project.description}}
+  </p>
+
+  <button (click)="spawner(project)"> Ver proyecto </button>
+
+</div>
+
