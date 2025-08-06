@@ -1,10 +1,14 @@
+<div class="container-switch">
+  <label class="switch">
+    <input
+      type="checkbox"
+      [checked]="darkMode"
+      (change)="fireToggle()"
+    />
+    <span class="slider round -ml-[10%]"></span>
 
-<label class="message">Dark mode</label>
-<label class="switch">
-  <input
-    type="checkbox"
-    [checked]="darkMode"
-    (change)="fireToggle()"
-  />
-  <span class="slider round"></span>
-</label>
+    <p class="-ml-[195%] -mt-[35%] max-lg:ml-[140%] max-lg:-mt-[35%] max-lg:text-[10%]">Dark</p>
+
+  </label>
+</div>
+

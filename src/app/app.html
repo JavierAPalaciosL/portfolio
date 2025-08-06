@@ -1,10 +1,10 @@
 <header>
-  <button>Inicio</button>
-  <button>Sobre mí</button>
-  <button>Proyectos</button>
-  <button>Experiencia</button>
-  <button>Tecnologías</button>
-  <button>Contacto</button>
+  <a href="#inicio"><button (click)="closeElement()">Inicio</button></a>
+  <a href="#sobre-mi"><button (click)="closeElement()">Sobre mí</button></a>
+  <a href="#proyectos"><button (click)="closeElement()">Proyectos</button></a>
+  <a href="#experiencia"><button (click)="closeElement()">Experiencia</button></a>
+  <a href="#tecnologias"><button (click)="closeElement()">Tecnologías</button></a>
+  <a href="#contacto"><button (click)="closeElement()">Contacto</button></a>
 
   <app-toogle-button (fire)="onToogle($event)"></app-toogle-button>
 
@@ -12,9 +12,9 @@
 
 @if (this.isVisible()) {
 
-  <div class="spawn w-[90%] ml-[5%] h-[80vh] p-[1%] mt-[3%] overflow-y-auto">
-    <div class="sticky top-0 w-full flex flex-row-reverse  z-50">
-      <button (click)="closeElement()">X</button>
+  <div class="spawn w-[90%] ml-[5%] h-[80vh] p-[1%] max-lg:max-h-[65vh] overflow-y-auto">
+    <div class="sticky top-0 w-full flex flex-row-reverse z-50 ">
+      <button class="w-[10%] h-[5vh]" (click)="closeElement()">X</button>
     </div>
 
     <div class="w-[100%]">
@@ -22,16 +22,15 @@
         {{ this.projectSelected().title }}
       </h2>
 
-      <div class="w-[100%] h-[50vh] mb-[10%]">
+
+      <div class="w-[100%] h-[70vh] mb-[10%] max-lg:mb-[35%]">
 
         <div class="carousel-container">
           <button (click)="prev(carousel)" class="carousel-button prev" aria-label="Anterior"><</button>
           <ul #carousel class="carousel">
 
             @for (image of this.projectSelected().carrusel; track image){
-
-              <li class="carousel-item"> <img [src]="image" class=" w-[100%] h-[100%] object-contain"/> </li>
-
+              <li class="carousel-item" > <img [src]="image" class=" w-[100%] h-[100%] object-contain"/> </li>
             }
           </ul>
           <button (click)="next(carousel)"  class="carousel-button next" aria-label="Siguiente"> > </button>
@@ -41,6 +40,7 @@
     </div>
 
     <div class="flex-col flex">
+      <h2>Descripción del proyecto</h2>
       <p>
         {{ this.projectSelected().description }}
       </p>
@@ -55,7 +55,8 @@
       </ul>
     </div>
 
-    <div class="mt-[2%]">
+    <div class="mt-[2%] mb-[1%]">
+      <h2>Aprendizajes claves</h2>
       <p>
         {{projectSelected().xp}}
       </p>
@@ -64,14 +65,34 @@
     <div>
       <h2>Tecnologias usadas</h2>
 
-      
+      <div class="grid grid-cols-4 space-x-4 mt-[1%] max-lg:grid max-lg:grid-cols-2 space-y-4">
+        @for (iterator of this.projectSelected().stackWithIcons; track iterator) {
+          <div class="flex mr-[1%] w-[100%] h-[100%] w-[55%] p-[1%] max-lg:h-[100%] max-lg:w-[100%] max-lg:p-[1%]">
+            <img [src]="iterator.uriIcon" class="h-[10vh] w-[8vw] max-lg:ml-[5%] max-lg:h-[8vh] max-lg:w-[8vh] max-lg:mt-[10%]" alt=""/>
+            <p class="mt-[8%] max-lg:mt-[20%] ">{{iterator.name}}</p>
+          </div>
+        }
+      </div>
 
     </div>
 
+
     <div>
+      <h2>Ver código</h2>
 
+      <div class="flex mt-[1%] max-lg:grid max-lg:grid-cols-2 space-y-4">
+      @for (iterator of this.projectSelected().repositoryWithIcons; track iterator) {
 
+        <div class="shadow shadow-green-400 h-[11vh] flex gap-x-1 mr-[1%] w-[15%] p-[1%] max-lg:h-[100%] max-lg:w-[100%] max-lg:p-[1%]">
+          <img [src]="iterator.uriIcon" class="h-[5vh] w-[5vw] max-lg:ml-[5%] max-lg:h-[8vh] max-lg:w-[8vh] max-lg:mt-[10%]" alt=""/>
 
+          <a [href]="iterator.url" target="_blank" rel="noopener noreferrer" class="mt-[3%] max-lg:mt-[15%] ">
+            <p class="mt-[3%] max-lg:mt-[2%] ">{{iterator.name}}</p>
+          </a>
+
+        </div>
+      }
+      </div>
     </div>
 
   </div>
@@ -82,7 +103,7 @@
 
   <main>
 
-    <div class="start-container">
+    <div id="inicio" class="start-container">
 
       <div class="start-container-photocontainer">
         <img src="Me.JPG" alt="foto de javier" class="me">
@@ -108,7 +129,7 @@
 
     </div>
 
-    <div class="about-me">
+    <div id="sobre-mi" class="about-me">
       <h1>Acerca de mí</h1>
       <p>Soy Ingeniero en Sistemas Computacionales con amplia experiencia en desarrollo backend
         usando Spring Boot. En mis tiempos libres profundizo en backend para mejorar mis habilidades.
@@ -120,7 +141,7 @@
       </p>
     </div>
 
-    <div class="projects">
+    <div id="proyectos" class="projects">
       <h1>Proyectos</h1>
 
       <div class="projects-list">
@@ -133,6 +154,70 @@
 
 
     </div>
+
+    <h1 id="experiencia" class="p-[2%] -mt-[10%]">Experiencia</h1>
+
+    <section class="xp">
+    @for (iterator of this.works; track iterator) {
+        <div class="xp-item">
+          <div class="xp-header">
+            <h3>{{iterator.corporation}}</h3>
+            <h4>{{iterator.position}}</h4>
+          </div>
+          <div class="xp-body">
+            <p>
+              {{iterator.description}}
+            </p>
+          </div>
+          <div class="xp-footer">
+            {{iterator.date}}
+          </div>
+        </div>
+        }
+    </section>
+
+    <h1 id="tecnologias" class="p-[2%]">Tecnologias</h1>
+
+    <div>
+
+      <div class="grid grid-cols-4 space-x-4 mt-[1%] max-lg:grid max-lg:grid-cols-2 space-y-4">
+        @for (iterator of this.myStack; track iterator) {
+          <div class="flex mr-[1%] w-[100%] h-[100%] w-[55%] p-[1%] max-lg:h-[100%] max-lg:w-[100%] max-lg:p-[1%]">
+            <img [src]="iterator.icon" class="h-[10vh] w-[8vw] max-lg:ml-[5%] max-lg:h-[8vh] max-lg:w-[8vh] max-lg:mt-[10%]" alt=""/>
+            <p class="mt-[8%] max-lg:mt-[20%] ">{{iterator.name}}</p>
+          </div>
+        }
+      </div>
+
+    </div>
+
+    <h1 id="contacto" class="p-[2%]">Contacto</h1>
+    <div>
+
+      <form class="form-container">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="tu@ejemplo.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensaje</label>
+          <textarea id="message" name="message" placeholder="Escribe tu mensaje..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">
+          Enviar
+        </button>
+      </form>
+
+
+    </div>
+
 
   </main>
 

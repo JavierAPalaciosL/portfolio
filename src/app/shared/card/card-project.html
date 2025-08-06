@@ -1,5 +1,15 @@
-<div class="image">
-  <img [src]=project.image alt="foto">
+<div class="image relative w-full pb-[56.25%] overflow-hidden ">
+  <!---
+  <img [src]=project.image alt="foto">-->
+  <div class="">
+    <iframe
+      class="absolute top-0 left-0 w-full h-full"
+      [src]="videoUrl"
+      allow="autoplay"
+      allowfullscreen>
+    </iframe>
+  </div>
+
 </div>
 
 <div class="content">
@@ -13,7 +23,7 @@
     {{project.description}}
   </p>
 
-  <button (click)="spawner(project)"> Ver proyecto </button>
+  <button class="w-[100%] h-[8vh] text-4xl font-bold" (click)="spawner(project)"> Ver proyecto </button>
 
 </div>
 

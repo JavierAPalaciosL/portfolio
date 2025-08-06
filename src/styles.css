@@ -7,6 +7,8 @@
   --color-button: #91eeb1;
   --color-font: #2f2e2e;
   --color-header: rgba(189, 255, 225, 0.42);
+  --border-card-xp: rgb(0, 247, 255);
+  --border-form: rgb(0,0,0);
   --border-radius-boton: 4px;
   --border-button:  #0af0f8 solid 2px;
   --h1-size: 3.0em;
@@ -22,6 +24,8 @@
   --color-header: rgba(41, 47, 45, 0.42);
   --border-radius-boton: 4px;
   --border-button:  #00ff02 solid 2px;
+  --border-card-xp: rgb(0, 255, 21);
+  --border-form: rgb(255, 255, 255);
   --h1-size: 3.0em;
   --h2-size: 2.0em;
   --text-body: #ffffff
@@ -75,14 +79,24 @@ header{
   background-color: var(--color-header);
   border-radius: 3px;
   position: sticky;
-  height: 4.5rem;
+  height: 4.0rem;
   width: 100%;
   backdrop-filter: blur(0.5rem);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px   -2px rgba(0, 0, 0, 0.05), 0 0 10px rgba(0, 0, 0, 0.03);
-  top: 2rem;
-  margin-top: 1%;
+  top: 1rem;
+  margin-top: 0%;
   font-family: 'Typography', sans-serif;
+  z-index: 50;
 }
+
+.container-switch{
+  margin-top: -2%;
+  padding: 1vh;
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
+
 
 button{
   border-radius: var(--border-radius-boton);
@@ -176,7 +190,6 @@ button{
   background-color: var(--bgcolor);
   scrollbar-width: none;
 
-
 }
 .carousel::-webkit-scrollbar {
   display: none;
@@ -215,6 +228,117 @@ button{
   animation: spawn-in 1.0s ease-out forwards;
 }
 
+.xp {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 1.5rem;
+  background-color: var(--bgcolor);
+}
+
+.xp-item {
+  background-color: var(--bgcolor);
+
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--border-card-xp);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.xp-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px var(--text-body);
+}
+
+.xp-item .xp-header {
+  padding: 1rem 1.5rem;
+  background: linear-gradient(195deg, var(--color-button), var(--color-header));
+  color: var(--text-body);
+  font-family: var(--font-myfont);
+}
+
+.xp-item .xp-body {
+  padding: 1.25rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.xp-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: var(--h2-size);
+}
+
+.xp-item p {
+  flex-grow: 1;
+  margin: 0 0 1rem;
+  color: var(--color-font);
+  line-height: 1.4;
+}
+
+.xp-item .xp-footer {
+  padding: 0 1.5rem 1rem;
+  font-size: 1rem;
+  color: var(--color-font);
+  text-align: right;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: var(--bgcolor);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px var(--border-card-xp);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--color-font);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder
+{
+  color: var(--text-body);
+}
+.form-group input,
+.form-group textarea
+{
+  border: 2px solid var(--border-form);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--border-card-xp);
+  box-shadow: 0 0 0 3px var(--text-body);
+}
+
+.form-group textarea {
+  resize: none;
+  min-height: 120px;
+}
+
+
 @keyframes spawn-in {
   to {
     opacity: 1;
@@ -224,6 +348,43 @@ button{
 
 
 @media (max-width: 1150px) {
+
+  .xp{
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  body{
+  }
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    padding: 0;
+  }
+
+  .carousel-item {
+    flex: 0 0 auto;
+    margin-top: -15vh;
+    width: 100vh;
+    height: 90vh;
+    border-radius: 0.5rem;
+  }
+
+  header{
+    margin-bottom: 15%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 2%;
+    z-index: 50;
+  }
+
+  .container-switch{
+    margin-top: 1vh;
+    display: grid;
+    column-gap: 10%;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 15vh;
+  }
+
   .start-container {
     flex-direction: column;
   }
