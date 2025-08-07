@@ -118,7 +118,7 @@ export class App implements AfterViewInit {
   constructor() {
     this.projects = [
       {
-        title: "RadioWeatherAPI",
+        title: "RadioWeatherAPI 2.2.5 (Beta)",
         description: "Aplicación web construida con arquitectura hexagonal (puertos y adaptadores) que orquesta de manera inteligente múltiples fuentes de datos: consulta la API de OpenWeather para mostrar el clima de cualquier ubicación y, cuando existen emisoras en el país seleccionado, despliega al instante la lista de estaciones de RadioBrowser correspondientes. Para enriquecer la navegación geográfica, integra OpenLeaflet para mapas interactivos y aprovecha de modo creativo los mapas SVG de Wikimedia Commons vía la API de Wikipedia. Además, asegura autenticación robusta con OAuth 2.0 de Google e implementa JWT para ofrecer una API stateless. Para maximizar velocidad y autonomía, incorpora localmente más de 150 000 registros importados vía pgAdmin/psql, lo que garantiza respuestas ultrarrápidas sin saturar las APIs externas. El resultado es una plataforma ágil, coherente y siempre disponible, diseñada para ofrecer al usuario una experiencia fluida y sin interrupciones.",
         image: "https://drive.google.com/file/d/14fF7j13D0GNJnx3lgow6FCYJ3KW8WfKl/preview",
         mainCharacteristics: [
@@ -160,7 +160,7 @@ export class App implements AfterViewInit {
         ]
       },
       {
-        title: "Java Swing 2D y Estructuras de Datos",
+        title: "Pacman 5.0.0 (Stable)",
         description: "Descubre en esta aplicación de escritorio Java cómo los principios de la inteligencia artificial cobran vida al encontrar la ruta más corta: cada nodo, cada arista y toda la lógica del grafo han sido programados desde cero, sin recurrir a ArrayList ni librerías externas. Observa paso a paso el funcionamiento del algoritmo de Dijkstra, optimizado y transparente, y aprende de su mecánica interna mientras experimentas con tus propios grafos. ¡Una herramienta ligera, educativa y handcrafted para dominar caminos y estructuras de datos!",
         image: "https://drive.google.com/file/d/1deC8m3pZjYfLPvuoVlpxL1vHoyL_drDT/preview",
         mainCharacteristics: [
@@ -204,7 +204,7 @@ export class App implements AfterViewInit {
         ]
       },
       {
-        title: "Custom Language Compiler (JavaCC & x86-64 Assembly)",
+        title: "Custom Language Compiler (JavaCC & x86-64 Assembly) 9.0.2(Stable)",
         description: "Este proyecto demuestra la creación de un compilador completo para un lenguaje C–like, partiendo del análisis léxico y sintáctico con JavaCC y generando ensamblador x86-64 a mano. Cada fase (lexer, parser, generación de AST, traducción a asm) fue desarrollada desde cero; luego ensamblé y vinculé con NASM y GCC para obtener binarios ejecutables. Un trabajo de ingeniería complejo que solo un especialista podría abordar exitosamente.",
         image: "https://drive.google.com/file/d/1POhSQ9Za-BQyy8GaOvZiV97Hbm9I8yYV/preview",
         mainCharacteristics: [
