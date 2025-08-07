@@ -292,4 +292,7 @@ export class App implements AfterViewInit {
   }
 
 
+  goToLink(url: string) {
+    window.open(url, '_blank', 'noopener');
+  }
 }
