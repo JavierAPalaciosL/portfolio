@@ -86,6 +86,11 @@ export class App implements AfterViewInit {
       name: "Linux"
     },
 
+    {
+      icon: "icons/postman.svg",
+      name: "Postman"
+    },
+
   ];
 
   public works: {
