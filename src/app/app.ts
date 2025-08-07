@@ -291,4 +291,5 @@ export class App implements AfterViewInit {
     carousel.scrollBy({ left:  w, behavior: 'smooth' });
   }
 
+
 }
