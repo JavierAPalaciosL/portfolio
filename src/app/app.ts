@@ -156,7 +156,7 @@ export class App implements AfterViewInit {
 
         repositoryWithIcons: [
           {uriIcon: "octocat.svg", name: "Frontend Angular", url: "https://github.com/JavierAPalaciosL/radio-angular-frontend.git"},
-          {uriIcon: "octocat.svg", name: "Backend Spring boot", url: "https://github.com/JavierAPalaciosL/radio-angular-frontend.git"}
+          {uriIcon: "octocat.svg", name: "Backend Spring boot", url: "https://github.com/JavierAPalaciosL/radio-spring-boot-backend.git"}
         ]
       },
       {
@@ -199,7 +199,7 @@ export class App implements AfterViewInit {
           {
             uriIcon: "octocat.svg",
             name: "Pacman Swing 2D",
-            url: "https://github.com/JavierAPalaciosL/pacman-swing-2d.git"
+            url: "https://github.com/JavierAPalaciosL/Pacman-with-dijkstra-s-algorithm.git"
           }
         ]
       },
@@ -245,7 +245,7 @@ export class App implements AfterViewInit {
           {
             uriIcon: "octocat.svg",
             name: "Custom Compiler",
-            url: "https://github.com/JavierAPalaciosL/custom-compiler.git"
+            url: "https://github.com/JavierAPalaciosL/Compiler.git"
           }
         ]
       }
