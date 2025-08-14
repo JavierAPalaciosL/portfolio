@@ -161,7 +161,8 @@ export class App implements AfterViewInit {
 
         repositoryWithIcons: [
           {uriIcon: "octocat.svg", name: "Frontend Angular", url: "https://github.com/JavierAPalaciosL/radio-angular-frontend.git"},
-          {uriIcon: "octocat.svg", name: "Backend Spring boot", url: "https://github.com/JavierAPalaciosL/radio-spring-boot-backend.git"}
+          {uriIcon: "octocat.svg", name: "Backend Spring boot", url: "https://github.com/JavierAPalaciosL/radio-spring-boot-backend.git"},
+          {uriIcon: "demo.svg", name: "Demo versión beta", url: "https://radio-angular-frontend.onrender.com/dashboard/countries"}
         ]
       },
       {
